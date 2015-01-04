@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 
-package imageviewer.Presistence;
+package imageviewer.Control;
 
 /**
  *
  * @author David
  */
-public class ProxyImage {
+public class NextImageOperation {
     
 }
