@@ -6,6 +6,7 @@ public class ProxyImage extends Image{
     private final ImageLoader loader;
     private Image next;
     private Image prev;
+    private Image actualImage;
 
     public ProxyImage(ImageLoader loader) {
         this.loader = loader;
@@ -14,7 +15,7 @@ public class ProxyImage extends Image{
 
     @Override
     public BitMap getBitMap() {
-        return null;
+        return actualImage.getBitMap();
     }
 
     @Override
