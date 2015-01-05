@@ -10,7 +10,7 @@ public class ImageViewer {
     }
 
     private void execute(String string) {
-        Image image = new ImageLoader(string).load();
+        Image image = new ImageLoader("C:\\Users\\Public\\Pictures\\Sample Pictures\\Tulips.jpg").load();
     }
-    
+
 }
