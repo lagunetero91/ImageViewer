@@ -1,15 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 package imageviewer.Swing;
 
-/**
- *
- * @author David
- */
-public class SwingBitMap {
+import imageviewer.Model.BitMap;
+import java.awt.image.BufferedImage;
+
+public class SwingBitMap implements BitMap{
+    private final BufferedImage bufferedImage;
+
+    
+    public SwingBitMap(BufferedImage bufferedImage) {
+        this.bufferedImage = bufferedImage;
+    }
+    
+    public BufferedImage getBufferdedImage() {
+        return bufferedImage;
+    }
+
+    @Override
+    public int getWidth() {
+        return bufferedImage.getWidth();
+    }
+
+    @Override
+    public int getHeight() {
+        return bufferedImage.getHeight();
+    }
     
 }
