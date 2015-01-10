@@ -3,15 +3,10 @@ package imageviewer.UI;
 
 import imageviewer.Model.Image;
 
-public class ImageDisplay {
-   private Image image;
+public interface ImageDisplay {
 
-    public void setImage(Image image) {
-        this.image = image;
-    }
+    public void setImage(Image image);
 
-    public Image getImage() {
-        return image;
-    }
+    public Image getImage();
    
 }
