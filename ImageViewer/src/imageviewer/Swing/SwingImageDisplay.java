@@ -1,15 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package imageviewer.Swing;
 
-/**
- *
- * @author David
- */
-public class SwingImageDisplay {
+import imageviewer.Model.Image;
+import imageviewer.UI.ImageDisplay;
+import javax.swing.JPanel;
+
+public class SwingImageDisplay extends JPanel implements ImageDisplay{
+    private Image image;
+    
+    @Override
+    public void setImage(Image image) {
+        this.image=image;
+    }
+
+    @Override
+    public Image getImage() {
+        return image;
+    }
     
 }
