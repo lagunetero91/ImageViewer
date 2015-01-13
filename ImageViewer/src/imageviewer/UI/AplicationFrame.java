@@ -1,9 +1,14 @@
 
 package imageviewer.UI;
 
+import imageviewer.Control.NextImageOperation;
+import imageviewer.Control.Operation;
+import imageviewer.Control.PrevImageOperation;
 import imageviewer.Swing.SwingImageDisplay;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -11,9 +16,10 @@ import javax.swing.JPanel;
 public class AplicationFrame extends JFrame{
     private SwingImageDisplay display;
     public AplicationFrame(){
-        setTitle("Image Viewer");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        addWidget();
+        this.setTitle("Image Viewer");
+        this.setSize(800,800);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.addWidget();
     }
 
     private void addWidget() {
@@ -23,7 +29,6 @@ public class AplicationFrame extends JFrame{
 
     private JPanel createDisplay() {
         display = new SwingImageDisplay();
-        display.setSize(new Dimension(1000,1000));
         return display;
     }
 
@@ -45,11 +50,27 @@ public class AplicationFrame extends JFrame{
 
     private JButton prevButton(String prev) {
         JButton button= new JButton(prev);
+        button.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                NextImageOperation next = new NextImageOperation(getDisplay());
+                next.execute();
+            }
+        });
         return button;
     }
 
     private JButton nextButton(String next) {
         JButton button = new JButton(next);
+        button.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                PrevImageOperation prev = new PrevImageOperation(getDisplay());
+                prev.execute();
+            }
+        });
         return button;
     }
 }
