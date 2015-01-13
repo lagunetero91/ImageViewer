@@ -4,7 +4,6 @@ import imageviewer.Model.Image;
 import imageviewer.UI.ImageDisplay;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
-import static java.time.Clock.offset;
 import javax.swing.JPanel;
 
 public class SwingImageDisplay extends JPanel implements ImageDisplay{

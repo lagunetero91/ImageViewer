@@ -11,7 +11,7 @@ public class ImageViewer {
     }
 
     private void execute(String string) {
-        Image image = new ImageLoader("C:\\Users\\Public\\Pictures\\Sample Pictures\\Tulips.jpg").load();
+        Image image = new ImageLoader(string).load();
         AplicationFrame frame = new AplicationFrame();
         frame.getDisplay().setImage(image);
         frame.visible();
