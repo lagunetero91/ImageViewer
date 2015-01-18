@@ -33,7 +33,7 @@ public class SwingImageDisplay extends JPanel implements ImageDisplay{
 
     public void paint (Graphics g){
         super.paint(g);
-        g.drawImage(getBitmap(), offset, 0, null);
+        g.drawImage(getBitmap(), 0, 0,getWidth(),getHeight(), null);
         
     }
 }
