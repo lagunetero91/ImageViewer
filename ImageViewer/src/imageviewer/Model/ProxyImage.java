@@ -1,6 +1,9 @@
 package imageviewer.Model;
 
 import imageviewer.Presistence.ImageLoader;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ProxyImage extends Image{
     private final ImageLoader loader;
@@ -15,6 +18,11 @@ public class ProxyImage extends Image{
 
     @Override
     public BitMap getBitMap() {
+        try{
+            checkLoaded();
+        } catch (IOException ex) {
+            Logger.getLogger(ProxyImage.class.getName()).log(Level.SEVERE, null, ex);
+        }
         return actualImage.getBitMap();
     }
 
@@ -37,5 +45,11 @@ public class ProxyImage extends Image{
     public void setPrev(Image image) {
         this.prev=image;
     }
+
+    private void checkLoaded() throws IOException {
+        if (actualImage != null) return;
+        actualImage = loader.load();
+    }
+    
     
 }
