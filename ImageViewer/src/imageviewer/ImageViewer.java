@@ -1,8 +1,9 @@
 package imageviewer;
 
 import imageviewer.Model.Image;
-import imageviewer.Presistence.ImageLoader;
+import imageviewer.Presistence.ImageSetLoader;
 import imageviewer.UI.AplicationFrame;
+import java.util.List;
 
 public class ImageViewer {
 
@@ -11,9 +12,9 @@ public class ImageViewer {
     }
 
     private void execute(String string) {
-        Image image = new ImageLoader(string).load();
+        List<Image> images = new ImageSetLoader(string).load();
         AplicationFrame frame = new AplicationFrame();
-        frame.getDisplay().setImage(image);
+        frame.getDisplay().setImage(images.get(0));
         frame.visible();
     }
 }
